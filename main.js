@@ -6,6 +6,15 @@ let lat = -44.7;
 let lon = 169.15;
 let zoom = 13;
 
+
+let stop = {
+    number: 16,
+    user: "lizzie2911",
+    lat: lat,
+    lon: lon,
+    zoom: zoom,
+};
+
 // Map initialisation
 let map = L.map('map').setView([lat, lon], zoom);
 
@@ -38,3 +47,4 @@ console.log("title",course.title);
 console.log("semester", course.semester);
 console.log("stunden", course.stunden);
 console.log("type", course.type);
+
