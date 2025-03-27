@@ -2,9 +2,14 @@
 Script for New Zealand trip
 */
 
+let lat = -44.7
+let lon = 169.15
+let zoom = 13
 
 // Map initialisation
-let map = L.map('map').setView([-44.7, 169.15], 13);
+let map = L.map('map').setView([lat, lon], zoom);
+
+
 
 // Background map defined
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -12,7 +17,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 // create Marker
-let marker = L.marker([-44.7, 169.15]).addTo(map);
+let marker = L.marker([lat, lon]).addTo(map);
 
 // Popup defined and opened
 marker.bindPopup("<b>Hello world!</b><br>Welcome to Wanaka!! :)").openPopup();
