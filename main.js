@@ -204,6 +204,14 @@ const STOPS = [
 
     ];
 
+// Ettapen:
+for (let i=0; i < STOPS.length; i++)  {
+    console.log(i, STOPS[i], STOPS[i].title);
+    // create Marker
+    let marker = L.marker([stop.lat, stop.lng]).addTo(map);
+}
+
+
 // Map initialisation
 let map = L.map('map').setView([stop.lat, stop.lng], stop.zoom);
 
@@ -214,8 +222,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-// create Marker
-let marker = L.marker([stop.lat, stop.lng]).addTo(map);
+
 
 // Popup defined and opened
 marker.bindPopup(`
