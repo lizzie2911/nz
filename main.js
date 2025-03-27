@@ -205,7 +205,7 @@ const STOPS = [
     ];
 
 // Map initialisation
-let map = L.map('map').setView([stop.lat, stop.lng], stop.zoom);
+let map = L.map('map');
 
 // Background map defined
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -215,16 +215,23 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Ettapen:
 for (let i=0; i < STOPS.length; i++)  {
-    console.log(i, STOPS[i], STOPS[i].title);
+    //console.log(i, STOPS[i], STOPS[i].title);
     // create Marker
     let marker = L.marker([STOPS[i].lat, STOPS[i].lng]).addTo(map);
 
-    // Popup defined and opened
+    // Popup defined
     marker.bindPopup(`
         <h2> ${STOPS[i].title} </h2>
         <ul>
             <li> Geogr. Breiter:${STOPS[i].lat.toFixed(5)}° </li>
             <li> Geogr. Länger: ${STOPS[i].lng.toFixed(5)}° </li>
         </ul>
-        `).openPopup();
+        `);
+    
+    // auf eigene Etappe blicken und Popup öffnen
+    if (STOPS[i].user == "lizzie2911") {
+        console.log(STOPS[i].user, "meine Etappe :)")
+        map.setView([STOPS[i].lat, STOPS[i].lng], STOPS[i].zoom);
+        marker.openPopup();
+    }
 }
