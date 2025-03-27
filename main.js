@@ -21,6 +21,9 @@ let marker = L.marker([lat, lon]).addTo(map);
 
 // Popup defined and opened
 marker.bindPopup(`
-    <b>Hello world!</b>
-    <br>Welcome to Wanaka at ${lat.toFixed(5)} / ${lon.toFixed(5)} !! :)
+    <h2> Wanaka </h2>
+    <ul>
+        <li> Geogr. Breiter:${lat.toFixed(5)}° </li>
+        <li> Geogr. Länger: ${lon.toFixed(5)}° </li>
+    </ul>
 `).openPopup();
