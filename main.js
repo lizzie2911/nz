@@ -3,7 +3,7 @@ Script for New Zealand trip
 */
 
 let lat = -44.7;
-let lon = 169.15;
+let lng = 169.15;
 let zoom = 13;
 
 let stop = {
@@ -30,7 +30,7 @@ const STOPS = [
         title: "Bay of Islands",
         user: "Ellinnaa",
         lat:-35.183333,
-        long:174.166667,
+        lng:174.166667,
         zoom:11,
     },
     {
@@ -228,4 +228,4 @@ marker.bindPopup(`
         <li> Geogr. Breiter:${stop.lat.toFixed(5)}° </li>
         <li> Geogr. Länger: ${stop.lng.toFixed(5)}° </li>
     </ul>
-`).openPopup();
+    `).openPopup();
