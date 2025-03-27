@@ -2,9 +2,9 @@
 Script for New Zealand trip
 */
 
-let lat = -44.7
-let lon = 169.15
-let zoom = 13
+let lat = -44.7;
+let lon = 169.15;
+let zoom = 13;
 
 // Map initialisation
 let map = L.map('map').setView([lat, lon], zoom);
