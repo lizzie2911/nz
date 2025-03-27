@@ -27,3 +27,14 @@ marker.bindPopup(`
         <li> Geogr. Länger: ${lon.toFixed(5)}° </li>
     </ul>
 `).openPopup();
+
+let course = {
+    title: "Webmapping",
+    semester: "25S",
+    stunden: 3,
+    type: "VU"
+};
+console.log("title",course.title);
+console.log("semester", course.semester);
+console.log("stunden", course.stunden);
+console.log("type", course.type);
