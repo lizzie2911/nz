@@ -11,8 +11,8 @@ let stop = {
     title: "Wanaka",
     user: "lizzie2911",
     lat: -44.7,
-    lon: 169.15,
-    zoom: zoom,
+    lng: 169.15,
+    zoom: 13,
 };
 
 
@@ -205,7 +205,7 @@ const STOPS = [
     ];
 
 // Map initialisation
-let map = L.map('map').setView([stop.lat, stop.lon], stop.zoom);
+let map = L.map('map').setView([stop.lat, stop.lng], stop.zoom);
 
 
 
@@ -215,13 +215,13 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 // create Marker
-let marker = L.marker([stop.lat, stop.lon]).addTo(map);
+let marker = L.marker([stop.lat, stop.lng]).addTo(map);
 
 // Popup defined and opened
 marker.bindPopup(`
     <h2> ${stop.title} </h2>
     <ul>
         <li> Geogr. Breiter:${stop.lat.toFixed(5)}° </li>
-        <li> Geogr. Länger: ${stop.lon.toFixed(5)}° </li>
+        <li> Geogr. Länger: ${stop.lng.toFixed(5)}° </li>
     </ul>
 `).openPopup();
