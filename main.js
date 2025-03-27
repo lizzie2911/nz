@@ -6,9 +6,9 @@ let lat = -44.7;
 let lon = 169.15;
 let zoom = 13;
 
-
 let stop = {
     number: 16,
+    title: "Wanaka",
     user: "lizzie2911",
     lat: lat,
     lon: lon,
