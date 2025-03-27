@@ -218,14 +218,13 @@ for (let i=0; i < STOPS.length; i++)  {
     console.log(i, STOPS[i], STOPS[i].title);
     // create Marker
     let marker = L.marker([STOPS[i].lat, STOPS[i].lng]).addTo(map);
+
+    // Popup defined and opened
+    marker.bindPopup(`
+        <h2> ${STOPS[i].title} </h2>
+        <ul>
+            <li> Geogr. Breiter:${STOPS[i].lat.toFixed(5)}° </li>
+            <li> Geogr. Länger: ${STOPS[i].lng.toFixed(5)}° </li>
+        </ul>
+        `).openPopup();
 }
-
-
-// Popup defined and opened
-marker.bindPopup(`
-    <h2> ${stop.title} </h2>
-    <ul>
-        <li> Geogr. Breiter:${stop.lat.toFixed(5)}° </li>
-        <li> Geogr. Länger: ${stop.lng.toFixed(5)}° </li>
-    </ul>
-    `).openPopup();
