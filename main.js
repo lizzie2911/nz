@@ -22,7 +22,7 @@ const STOPS = [
         lng: 172.6775,
         zoom: 13,
         title: "Cape Reinga",
-        nummer: 1,
+        nr: 1,
         user: "vintiyannick",
     },
     {
