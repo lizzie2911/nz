@@ -171,7 +171,7 @@ const STOPS = [
     },
     {
         nr: 24,
-        titel: "Moeraki Boulders",
+        title: "Moeraki Boulders",
         user: "StephanPumpernik",
         lat: -45.345275,
         lng: 170.826061,
