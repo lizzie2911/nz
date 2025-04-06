@@ -204,21 +204,23 @@ const STOPS = [
 
     ];
 
+// Overlays
+/*let overlays = {
+    stops: L.featureGroup().addTo(map),
+}
 
-
+stops = STOPS
+*/
 // Layercontrol
 L.control.layers({
     "OpenStreetMap Mapnik": L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map),
     "OpenTopoMap": L.tileLayer.provider('OpenTopoMap').addTo(map),
     "Esri WorldImagery": L.tileLayer.provider('Esri.WorldImagery').addTo(map),
     
-}, {
-    /*"Sehenswürdigkeiten": overlays.sights,
-    "Vienna sightseeing Linien": overlays.lines,
-    "Vienna sightseeing Haltstellen": overlays.stops,
-    "Fußgängerzonen": overlays.zones,
-    "Hotels und Unterkünfte": overlays.hotels,
-}).addTo(map);*/
+} /*, {
+    "Stops": overlays.stops,
+    
+}*/).addTo(map);
 
 // Map initialisation
 let map = L.map('map');
