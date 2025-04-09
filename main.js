@@ -204,26 +204,23 @@ const STOPS = [
 
     ];
 
-// Overlays
-/*let overlays = {
-    stops: L.featureGroup().addTo(map),
-}
 
-stops = STOPS
-*/
-// Layercontrol
-/* L.control.layers({
-    "OpenStreetMap Mapnik": L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map),
-    "OpenTopoMap": L.tileLayer.provider('OpenTopoMap').addTo(map),
-    "Esri WorldImagery": L.tileLayer.provider('Esri.WorldImagery').addTo(map),
-    
-} /*, {
-    "Stops": overlays.stops,
-    
-}*//*).addTo(map);*/
 
 // Map initialisation
 let map = L.map('map');
+
+//Overlays definieren
+let overlays = {
+    
+
+}
+
+//Layercontrol
+L.control.layers({
+
+}, {
+
+}).addTo(map);
 
 // Maßstab
 L.control.scale({
@@ -277,3 +274,5 @@ document.querySelector("#pulldown select").onchange = function(evt) {
     //console.log(url);
     window.location = url;
 }
+
+L.geoJSON(jsondata.addTo(overlays.stops));
