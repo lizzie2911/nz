@@ -203,24 +203,12 @@ const STOPS = [
     },
 
     ];
-
+console.log(STOPS[0]);
+console.log(STOPS[0].title);
 
 
 // Map initialisation
 let map = L.map('map');
-
-//Overlays definieren
-let overlays = {
-    
-
-}
-
-//Layercontrol
-L.control.layers({
-
-}, {
-
-}).addTo(map);
 
 // Maßstab
 L.control.scale({
@@ -233,11 +221,14 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+let markerGroup = L.layerGroup()
+
 // Ettapen:
 for (let i=0; i < STOPS.length; i++)  {
     //console.log(i, STOPS[i], STOPS[i].title);
     // create Marker
     let marker = L.marker([STOPS[i].lat, STOPS[i].lng]).addTo(map);
+    marker.addTo(markerGroup);
 
     // Popup defined
     marker.bindPopup(`
@@ -266,6 +257,7 @@ for (let i=0; i < STOPS.length; i++)  {
     
 }
 
+markerGroup.addTo(map);
 
 // auf Änderungen beim Pulldown reagieren
 document.querySelector("#pulldown select").onchange = function(evt) {
@@ -275,4 +267,17 @@ document.querySelector("#pulldown select").onchange = function(evt) {
     window.location = url;
 }
 
-L.geoJSON(jsondata.addTo(overlays.stops));
+//Overlays definieren
+//let overlays = {
+    
+
+//}
+
+//Layercontrol
+L.control.layers({
+    "Open Topo Map":L.tileLayer.provider('OpenTopoMap').addTo(map),
+    "Esri World Imagery":L.tileLayer.provider('Esri.WorldImagery').addTo(map),
+    "OpenStreetMap Mapnik":L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map),
+}, {
+    "Etappen":markerGroup
+}).addTo(map);
