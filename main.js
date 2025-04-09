@@ -212,7 +212,7 @@ const STOPS = [
 stops = STOPS
 */
 // Layercontrol
-L.control.layers({
+/* L.control.layers({
     "OpenStreetMap Mapnik": L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map),
     "OpenTopoMap": L.tileLayer.provider('OpenTopoMap').addTo(map),
     "Esri WorldImagery": L.tileLayer.provider('Esri.WorldImagery').addTo(map),
@@ -220,7 +220,7 @@ L.control.layers({
 } /*, {
     "Stops": overlays.stops,
     
-}*/).addTo(map);
+}*//*).addTo(map);*/
 
 // Map initialisation
 let map = L.map('map');
